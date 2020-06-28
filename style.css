@@ -1,0 +1,253 @@
+*{
+    margin: 0 0;
+    padding: 0 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-image: url("background-image.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: scroll;
+}
+
+.navbar {
+    background-color: rgb(100, 216, 255);
+    padding-bottom: 10px;
+    display: flex;
+}
+
+.logo {
+    color: white;
+    margin: 15px 10px;
+    flex: 1;
+    font-size: 10px;
+}
+
+.spacer {
+    flex: 1;
+}
+
+.searchbar {
+    margin-top: 15px;
+}
+
+.searchbar input {
+    background-color: rgb(100, 216, 255);
+    color: white;
+    outline: none;
+    text-align: center;
+}
+
+.searchbar ::placeholder {
+    color: white;
+}
+
+input:focus::placeholder {
+    color: transparent;
+}
+
+#search-city {
+    border: none;
+    border-bottom: 2px white solid;
+    padding: 5px;
+    width: 150px;
+}
+
+#submit {
+    background-color: white;
+    border: 1px black solid;
+    padding: 5px 5px;
+    font-weight: 600;
+    color: black;
+}
+
+#submit:hover {
+    background-color: lightsalmon;
+}
+
+.footer {
+    background-color: rgb(100, 216, 255);
+    color: white;
+    text-align: center;
+}
+
+.weather-header {
+    margin: 2rem auto;
+    text-align: center;
+    background-color: rgb(100, 216, 255);
+    border-bottom: 5px lightsalmon solid;
+    color: white;
+    width: 200px;
+    padding: 10px;
+}
+
+.weather-container {
+    margin: 2rem auto;
+    text-align: center;
+    max-width: 300px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+}
+
+.weather-container p {
+    padding: 10px;
+}
+
+.current-weather {
+    border: 5px black solid;
+    background-color: rgb(100, 216, 255);
+}
+
+.current-weather:hover {
+    background-color: lightsalmon;
+}
+
+.info-container {
+    text-align: center;
+    margin: 50px 30px;
+}
+
+.how-to h1 {
+    background-color: rgb(100, 216, 255);
+    color: white;
+    padding: 10px;
+    width: 200px;
+    margin: 0 auto;
+    border-bottom: 5px lightsalmon solid;
+}
+
+.how-to p {
+    margin-top: 30px;
+    border: 2px black solid;
+    background-color: rgb(100, 216, 255);
+    padding: 10px 10px;
+}
+
+.about {
+    margin-top: 40px;
+}
+
+.about h1 {
+    background-color: rgb(100, 216, 255);
+    color: white;
+    padding: 10px;
+    width: 200px;
+    margin: 0 auto;
+    border-bottom: 5px lightsalmon solid;
+}
+
+.about p {
+    margin-top: 30px;
+    border: 2px black solid;
+    background-color: rgb(100, 216, 255);
+    padding: 10px 10px;
+}
+
+.forecast-header {
+    margin: 2rem auto;
+    text-align: center;
+    background-color: rgb(100, 216, 255);
+    border-bottom: 5px lightsalmon solid;
+    color: white;
+    width: 200px;
+    padding: 10px;
+}
+
+.forecast-container {
+    margin: 2rem auto;
+    text-align: center;
+    max-width: 300px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+}
+
+.forecast-container p {
+    padding: 10px;
+}
+
+@media only screen and (min-width: 768px) {
+
+    .logo {
+        font-size: 15px;
+        margin: 15px 10px;
+    }
+
+    #search-city {
+        padding: 10px;
+        width: 300px;
+    }
+
+    .weather-header {
+        width: 300px;
+    }
+
+    .info-container {
+        display: flex;
+    }
+
+    .how-to {
+        flex: 1;
+    }
+
+    .how-to h1 {
+        width: 300px;
+    }
+
+    .about {
+        flex: 1;
+        margin-top: 0;
+    }
+
+    .about h1 {
+        width: 300px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+
+    .logo {
+        font-size: 20px;
+        margin: 15px 15px;
+    }
+
+    #search-city {
+        padding: 10px;
+        width: 400px;
+    }
+
+    #submit {
+        padding: 5px 15px;
+    }
+
+    .weather-header {
+        width: 450px;
+    }
+
+    .info-container {
+        margin: 100px 400px;
+    }
+
+    .how-to h1 {
+        width: 450px;
+    }
+
+    .how-to p {
+        margin-top: 50px;
+    }
+
+    .about {
+        margin: 0 200px;
+    }
+
+    .about h1 {
+        width: 450px;
+    }
+
+    .about p {
+        margin-top: 50px;
+    }
+}
