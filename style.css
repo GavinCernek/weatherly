@@ -101,10 +101,6 @@ input:focus::placeholder {
     background-color: rgb(100, 216, 255);
 }
 
-.current-weather:hover {
-    background-color: lightsalmon;
-}
-
 .info-container {
     text-align: center;
     margin: 50px 30px;
@@ -146,27 +142,12 @@ input:focus::placeholder {
     padding: 10px 10px;
 }
 
-.forecast-header {
-    margin: 2rem auto;
-    text-align: center;
-    background-color: rgb(100, 216, 255);
-    border-bottom: 5px lightsalmon solid;
-    color: white;
-    width: 200px;
-    padding: 10px;
-}
-
-.forecast-container {
-    margin: 2rem auto;
-    text-align: center;
-    max-width: 300px;
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
-}
-
-.forecast-container p {
-    padding: 10px;
+@media only screen and (max-width: 320px) {
+    
+    #search-city {
+        padding: 5px;
+        width: 100px;
+    }
 }
 
 @media only screen and (min-width: 768px) {
@@ -228,7 +209,7 @@ input:focus::placeholder {
     }
 
     .info-container {
-        margin: 100px 400px;
+        margin: 100px auto;
     }
 
     .how-to h1 {
@@ -240,7 +221,11 @@ input:focus::placeholder {
     }
 
     .about {
-        margin: 0 200px;
+        margin: 0 100px;
+    }
+
+    .how-to {
+        margin: 0 100px;
     }
 
     .about h1 {

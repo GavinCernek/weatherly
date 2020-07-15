@@ -2,6 +2,7 @@
 $(document).ready(function() {
 
     if ($(window).width() < 768) {
+        
         $("#search-city").attr("placeholder", "Search forecast for...");
     }
 
@@ -17,9 +18,6 @@ $(document).ready(function() {
             success: function(data) {
             
                 console.log(data);
-
-                //$(".current-weather").wrap("<a href='forecast.html'></a>");
-                $(".current-weather").css({"color": "black", "text-decoration": "none"});
 
                 const city = data.name;
                 $(".city").html(city);
@@ -40,33 +38,7 @@ $(document).ready(function() {
                 $(".humidity").html("Humidity: " + humidity + "%");
 
                 const wind_speed = data.wind.speed;
-                $(".wind-speed").html("Wind Speed: " + wind_speed + "mph");
-
-                $(".current-weather").click(function() {
-
-                    document.location.href = "forecast.html";
-                    
-                    $(document).ready(function() {
-                        
-                        $.ajax({
-                            type: "GET",
-                            url: "http://api.openweathermap.org/data/2.5/forecast?q=" + city_searched + "&units=imperial&appid=ac3259094185ee5c45e5f150ed1a9c5d",
-                            success: function(data) {
-            
-                                console.log(data);
-                
-                                $.each(data.list, function(index) {
-                                    $(".city").append(data.list[index].main.temp);
-                                });
-                            },
-                            statusCode: {
-                                404: function() {
-                                    console.log("ERRR");
-                                }
-                            }
-                        });
-                    });
-                });
+                $(".wind-speed").html("Wind Speed: " + wind_speed + " mph");
             },
             statusCode: {
                 400: function() {
@@ -90,7 +62,9 @@ $(document).ready(function() {
                     $(".wind-speed").empty();
                 },
                 404: function() {
-
+                    $(".current-weather").hover(function() {
+                        $(this).css({"background-color": "rgb(100, 216, 255)"});
+                    })
                     $(".temp").html("No location was found with name '" + city_searched + "'. Remember to check that your location is formatted and spelled correctly.");
                     $(".icon").removeAttr("src");
                     $(".weather").empty();
