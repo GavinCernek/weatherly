@@ -19,7 +19,7 @@ $(document).ready(() => {       // Once the document is ready to be displayed,
                 const city = data.name + ", " + data.sys.country;       // Store response data and fill the containers
                 $(".city").html(city);
 
-                const icon = "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png";
+                const icon = "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png";        // Adding the icon to the container
                 $(".icon").attr("src", icon);
 
                 const weather = data.weather[0].main;
