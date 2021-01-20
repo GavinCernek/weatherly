@@ -13,13 +13,13 @@ $(document).ready(() => {       // Once the document is ready to be displayed,
 
         $.ajax({            // Initiate HTTP GET request to the OpenWeather API
             type: "GET",
-            url: "http://api.openweathermap.org/data/2.5/weather?q=" + city_searched + "&units=imperial&appid=ac3259094185ee5c45e5f150ed1a9c5d",
+            url: "https://api.openweathermap.org/data/2.5/weather?q=" + city_searched + "&units=imperial&appid=ac3259094185ee5c45e5f150ed1a9c5d",
             success: (data) => {        // If success,
 
                 const city = data.name + ", " + data.sys.country;       // Store response data and fill the containers
                 $(".city").html(city);
 
-                const icon = "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png";        // Adding the icon to the container
+                const icon = "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png";        // Adding the icon to the container
                 $(".icon").attr("src", icon);
 
                 const weather = data.weather[0].main;
