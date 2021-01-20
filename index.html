@@ -9,62 +9,66 @@
 </head>
 
 <body>
-    <header>
-        <div class="navbar">
-            <div class="logo">
-                <h1>Weatherly</h1>
+    <div class="page-container">
+        <div class="content-wrap">
+            <header>
+                <div class="navbar">
+                    <div class="logo">
+                        <h1>Weatherly</h1>
+                    </div>
+
+                    <div class="searchbar">
+                        <input type="text" id="search-city" placeholder="What's the weather like in...?">
+                        <input type="submit" id="submit" value="Search">
+                    </div>
+
+                    <div class="spacer"></div>
+                </div>
+            </header>
+
+            <div class="weather-header">
+                <h1>Current Weather</h1>
+            </div>
+            
+            <div class="weather-container">
+                <div class="current-weather">
+                    <p class="city"></p>
+                    <img class="icon">
+                    <p class="weather"></p>
+                    <p class="temp">Please Enter a Location to View the Forecast</p>
+                    <p class="real-feel"></p>
+                    <p class="humidity"></p>
+                    <p class="wind-speed"></p>
+                </div>
             </div>
 
-            <div class="searchbar">
-                <input type="text" id="search-city" placeholder="What's the weather like in...?">
-                <input type="submit" id="submit" value="Search">
+            <div class="info-container">
+                <div class="how-to">
+                    <h1>How to Use</h1>
+                    <p>Enter a location into the search bar to get its current forecast data. 
+                    A location can be searched by its city name or by combining city name  
+                    and country code seperated by commas (e.g. Chicago || Chicago, US). 
+                    </p>
+                </div>
+
+                <div class="about">
+                    <h1>About</h1>
+                    <p>Weatherly is a web application that was built using CSS, HTML, and jQuery. 
+                    It utilizes OpenWeather's weather APIs in order to retrieve current forecast data based on location.
+                    Using jQuery, Weatherly fetches data from the API using Ajax techniques 
+                    as well as dynamically changes the content of HTML elements.
+                    CSS was used to make the application decorative and responsive so it could be viewed on phones and tablets 
+                    while HTML provided the structure for the content to be displayed to the user.   
+                    </p>
+                </div>
             </div>
-
-            <div class="spacer"></div>
         </div>
-    </header>
 
-    <div class="weather-header">
-        <h1>Current Weather</h1>
+        <footer>
+            <div class="footer">
+                <p>&copy; 2021, Gavin Cernek</p>
+            </div>
+        </footer>
     </div>
-    
-    <div class="weather-container">
-        <div class="current-weather">
-            <p class="city"></p>
-            <img class="icon">
-            <p class="weather"></p>
-            <p class="temp">Please Enter a Location to View the Forecast</p>
-            <p class="real-feel"></p>
-            <p class="humidity"></p>
-            <p class="wind-speed"></p>
-        </div>
-    </div>
-
-    <div class="info-container">
-        <div class="how-to">
-            <h1>How to Use</h1>
-            <p>Enter a location into the search bar to get its current forecast data. 
-               A location can be searched by its city name or by combining city name, state code (only for US), 
-               and country code seperated by commas (e.g. Chicago || Chicago, Illinois || Chicago, Illinois, US). 
-            </p>
-        </div>
-
-        <div class="about">
-            <h1>About</h1>
-            <p>Weatherly is a web application that was built using CSS, HTML, and jQuery. 
-               It utilizes OpenWeather's weather APIs in order to retrieve current forecast data based on location.
-               Using jQuery, Weatherly fetches data from the API using Ajax techniques 
-               as well as dynamically changes the content of HTML elements.
-               CSS was used to make the application decorative and responsive so it could be viewed on phones and tablets 
-               while HTML provided the structure for the content to be displayed to the user.   
-            </p>
-        </div>
-    </div>
-
-    <footer>
-        <div class="footer">
-            <p>Property of Gavin Cernek</p>
-        </div>
-    </footer>
 </body>
 </html>

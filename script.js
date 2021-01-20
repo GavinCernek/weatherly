@@ -1,25 +1,22 @@
+// Written by: Gavin Cernek, 7/15/2020
 
-$(document).ready(function() {
+$(document).ready(() => {       // Once the document is ready to be displayed,
 
-    if ($(window).width() < 768) {
+    if ($(window).width() < 768) {      // Adjusts search bar text for smaller screens
         
         $("#search-city").attr("placeholder", "Search forecast for...");
-    }
+    };
 
-    $("#submit").click(function() {
+    $("#submit").click(() => {      // When search button is clicked,
         
-        const city_searched = $("#search-city").val();
+        const city_searched = $("#search-city").val();      // Retrieves the search value
 
-        $(".temp").empty();
-
-        $.ajax({
+        $.ajax({            // Initiate HTTP GET request to the OpenWeather API
             type: "GET",
             url: "http://api.openweathermap.org/data/2.5/weather?q=" + city_searched + "&units=imperial&appid=ac3259094185ee5c45e5f150ed1a9c5d",
-            success: function(data) {
-            
-                console.log(data);
+            success: (data) => {        // If success,
 
-                const city = data.name;
+                const city = data.name + ", " + data.sys.country;       // Store response data and fill the containers
                 $(".city").html(city);
 
                 const icon = "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png";
@@ -40,8 +37,8 @@ $(document).ready(function() {
                 const wind_speed = data.wind.speed;
                 $(".wind-speed").html("Wind Speed: " + wind_speed + " mph");
             },
-            statusCode: {
-                400: function() {
+            statusCode: {           // If error code,
+                400: () => {        // No loaction was entered
 
                     $(".temp").html("No location was entered. Please enter a location.");
                     $(".icon").removeAttr("src");
@@ -51,20 +48,8 @@ $(document).ready(function() {
                     $(".humidity").empty();
                     $(".wind-speed").empty();
                 },
-                401: function() {
-
-                    $(".temp").html("An error occured while accessing this resource.");
-                    $(".icon").removeAttr("src");
-                    $(".weather").empty();
-                    $(".city").empty();
-                    $(".real-feel").empty();
-                    $(".humidity").empty();
-                    $(".wind-speed").empty();
-                },
-                404: function() {
-                    $(".current-weather").hover(function() {
-                        $(this).css({"background-color": "rgb(100, 216, 255)"});
-                    })
+                404: () => {        // No location with the search query was found
+                    
                     $(".temp").html("No location was found with name '" + city_searched + "'. Remember to check that your location is formatted and spelled correctly.");
                     $(".icon").removeAttr("src");
                     $(".weather").empty();
@@ -73,7 +58,7 @@ $(document).ready(function() {
                     $(".humidity").empty();
                     $(".wind-speed").empty();
                 },
-                429: function() {
+                429: () => {        // Ran out of API calls
 
                     $(".temp").html("Too many API calls have been made. Please wait for the calls to refresh.");
                     $(".icon").removeAttr("src");
@@ -87,7 +72,7 @@ $(document).ready(function() {
         });
     });
 
-    $("#search-city").keypress(function(event) {
+    $("#search-city").keypress((event) => {     // Allows user to press Enter key to simulate a click on the search button
         
         if (event.code === "Enter") {
             

@@ -1,3 +1,5 @@
+/* Written by: Gavin Cernek, 07/15/2020 */
+
 *{
     margin: 0 0;
     padding: 0 0;
@@ -10,6 +12,16 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: scroll;
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content-wrap {
+    flex: 1;
 }
 
 .navbar {
@@ -71,6 +83,10 @@ input:focus::placeholder {
     background-color: rgb(100, 216, 255);
     color: white;
     text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    padding-top: 0.5rem;
 }
 
 .weather-header {
